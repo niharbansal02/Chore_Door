@@ -13,7 +13,7 @@ Option 2. Using Command Line
 	  Open the local folder in terminal and use your browser to open it
 	  e.g.,
 	  Google Chrome:-
-	  ``` $ google-chrome index.html ```
-	
+	  ```$ google-chrome index.html ```
 	  Firefox
-	  ``` $ firefox index.html ```
+	  ```$ firefox index.html ```
+	  
