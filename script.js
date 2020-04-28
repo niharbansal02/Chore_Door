@@ -1,5 +1,5 @@
-let win = 0;
-let loose = 0;
+let currStreak = 0;
+let bestStreak = 0;
 doorImage1 = document.querySelector('#door1');
 doorImage2 = document.querySelector('#door2');
 doorImage3 = document.querySelector('#door3');
@@ -57,22 +57,24 @@ doorImage3.onclick = () => {
     }
 }
 
-  startButton.onclick = startRound;
+startButton.onclick = startRound;
 
 
 function gameOver(status) {
     if(status === 'win') {
-	win++;
+	currStreak++;
         startButton.innerHTML = 'You win! Play Again?';
     }
     else {
-	loose++;
+	if(currStreak > bestStreak)
+		bestStreak = currStreak;
+	currStreak = 0;
         startButton.innerHTML = 'Game over! Play Again?';
     }
     currentPlaying = false;
 
-    winCounter.innerHTML = "Wins: " + win;
-    looseCounter.innerHTML = "Losses: " + loose;
+    winCounter.innerHTML = "Current Streak: " + currStreak;
+    looseCounter.innerHTML = "Best Streak: " + bestStreak;
 
 }
 
